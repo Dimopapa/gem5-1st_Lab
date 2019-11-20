@@ -1,24 +1,48 @@
 # gem5-1st_Lab 
-## Question 1
+## Ερωτήματα 
 
-### 1. Inside main() of starter_se.py we can see :
+### 1. Εντός της main() στο αρχείο starter_se.py βλέπουμε τα εξής χαρακτηριστηκά:
 * CPU type (by default) : atomic
 * CPU frequency (by default) : 4 Ghz
 * CPU Cores (by default) : 1 core
-* Memory type (by default) : DDRE_1600_8x8
+* Memory type (by default) : DDR3_1600_8x8
 * Memory channels (by default) : 2 
 * Memory Ranks (by default) : 2
 * Memory Size (by default) : 2 GB
 * Cache line size : 64
 
-### 2. Inside config.ini file we can see : 
+### 2. Εντός του αρχείου config.ini παρατηρούμε : 
 * type=MinorCPU          (system.cpu_cluster.cpus)
 * numThreads=1           (system.cpu_cluster.cpus)
 * ranks_per_channel=2     (system.mem.ctrls0)
 * cache_line_size = 64    (system)
+* voltage=3.3
+* p_state_clk_gate_max=1000000000000
 
-### 3. I compiled this mini program and the results are: 
+### 3.  
+<pre>
+Pipeline Stages: Το κάθε Pipeline Stage είναι υπεύθυνο για πράξεις όπως αποκωδικοποίηση ή εκτέλεση κάποιας εντολής, και ανάλογα, είτε
+στέλνει οδηγίες στο επόμενο stage εάν η λειτουργία του ήταν επιτυχής και το επόμενο στάδιο είναι έτοιμο να δεχθεί εντολές, είτε κρατάει
+την πληροφορία περιμένοντας μέχρι να τηρούνται οι παραπάνω προϋποθέσεις. Τα stages επικοινωνούν μεταξύ τους για 3 λόγους. Όταν στέλνουν
+"οδηγίες" στα επόμενα στάδια. Όταν υπάρχει κάποιο πρόβλημα στη ροή, ώστε να σταματήσουν τη ροή της πληροφορίας τα προηγούμενα στάδια.
+Τέλος όταν έχει γίνει κάποιο λάθος στην αλληλουχία των σταδίων. 
+Συνήθως τα στάδια χρησιμοποιούνται σε πεντάδες με τις εξής λειτουργίες:
+ εισαγωγή εντολής
+ αποκωδικοποίηση εντολής
+ εκτέλεση εντολής, επεξεργασία μνήμης
+ εγγραφή καταχωρητών
+Resource Request Model: Σε αυτό το μοντέλο, τα resources αναφέρονται σε οποιοδήποτε μέρος του επεξεργαστή θέλουμε μια οδηγία να έχει
+πρόσβαση, όπως για παράδειγμα η πρόβλεψη κλάδου, μια μνήμη cache, κάποιος ενεργοποιητής κλπ. Το μοντέλο αυτό, όλα τα εξαρτήματα
+θεωρούνται να ανήκουν στη γενική κλάση resources με διαφορετικές, όμως, ιδιότητες. Σε κάθε στάδιο, μια οδηγία ζητείται από το αντίστοιχο
+resource. Εάν η εκτέλεση της γίνει με σωστό τρόπο, τότε μεταβαίνει στο επόμενο στάδιο. Για κάθε resource υπάρχουν 2 βασικά
+χαρακτηριστικά, η διεύθυνση του και η εντολή που εκτελεί. Μετά από κάθε δημιουργία ενός resource-request, αυτό μεταβαίνει στο Resource
+Pool, το οποίο προωθεί την πληροφορία στο κατάλληλο Resource. Κάθε Resource, μόλις λάβει εντολή, ελέγχει εάν μπορεί να την
+πραγματοποιήσει εκείνη τη στιγμή κι εάν είναι εφικτό, τότε δεσμεύει τον απαραίτητο χώρο που χρειάζεται και πραγματοποιεί την εργασία,
+στέλνοντας επιτυχές σήμα. Εάν για κάποιο λόγο η εργασία δεν εκτελεστεί με επιτυχία, τότε επιστρέφει ανεπιτυχές σήμα.
+</pre>
 
+
+Παρακάτω φαίνεται το πρόγραμμα που έγινε compile.
 
 <pre>
 #include <stdio.h>
@@ -84,7 +108,8 @@ sim_insts                                       11113                       # Nu
 sim_ops                                         12754                       # Number of ops (including micro ops) simulated
 sim_seconds                                  0.000038                       # Number of seconds simulated
 sim_ticks                                    37654000                       # Number of ticks simulated </pre>
-we can see that the time now is bigger! 
+
+Ίδιος χρόνος - περισσότερα ticks.
 
 *TimingSimpleCPU*
 <pre>final_tick                                   42582000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
@@ -98,7 +123,8 @@ sim_insts                                       11049                       # Nu
 sim_ops                                         12636                       # Number of ops (including micro ops) simulated
 sim_seconds                                  0.000043                       # Number of seconds simulated
 sim_ticks                                    42582000                       # Number of ticks simulated </pre>
-We can see that the time now is bigger too! 
+
+Ίδιος χρόνος - περισσότερα ticks και σε αυτή την περίπτωση.
 
 By changing clock to 10000 we had these results 
 
@@ -114,7 +140,8 @@ sim_insts                                       11113                       # Nu
 sim_ops                                         12754                       # Number of ops (including micro ops) simulated
 sim_seconds                                  1.892100                       # Number of seconds simulated
 sim_ticks                                1892100000000                       # Number of ticks simulated</pre>
-really bigger time !
+
+Είναι προφανές πως ο χρόνος αλλά και τα ticks είναι πολύ μεγαλύτερα και αυτό είναι λογικό γιατί μειώθηκε το ρολόι.
 
 *TimingSimpleCPU*
 <pre>final_tick                               3397600000000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
@@ -130,6 +157,14 @@ sim_seconds                                  3.397600                       # Nu
 sim_ticks                                3397600000000                       # Number of ticks simulated </pre>
 
 
+*Resources:*
+
+http://gem5.org/Running_gem5
+http://learning.gem5.org/book/part1/example_configs.html
+http://www.gem5.org/InOrder_Pipeline_Stages
+http://www.gem5.org/InOrder_Resource-Request_Model
+http://www.gem5.org/docs/html/minor.html
+http://www.m5sim.org/SimpleCPU
 
 #### Κριτική
 
