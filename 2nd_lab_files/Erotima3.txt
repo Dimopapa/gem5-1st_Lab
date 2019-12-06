@@ -1,0 +1,11 @@
+Benchmarks	system.clk_domain.clock	system.cpu_clk_domain.clock
+specbzip	1000	500
+specbzip_1ghz	1000	1000
+spechmmer	1000	500
+spechmmer_1ghz	1000	1000
+specmcf		1000	500
+specmcf_1ghz	NAN	NAN
+speclibm	1000	500
+speclibm_1ghz	1000	1000
+specsjeng	1000	500
+specsjeng_1ghz	1000	1000
