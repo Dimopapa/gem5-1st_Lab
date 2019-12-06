@@ -5,5 +5,17 @@
 
 ## Ερωτήματα 
 
-### 1.
+### 1.1
+ Οι βασικές παρέμετροι για τον επεξεργαστή που εξομοιώνει ο gem5 όσον αφορά το υποσύστημα μνήμης είναι οι παρακάτω:
+ (Τις πληροφορίες τις αντλούμε από το αρχείο config.ini)
  
+<pre>L1 Instruction Size = 32768   (32kB)      
+L1 Instruction Associativity = 2
+L1 Data Size = 65536          (64kB)
+L1 Data Associativity = 2
+L2 Size = 2097152             (2MB)
+L2 Associativity = 8
+Cache Line Size = 64</pre>
+
+
+### 1.2
