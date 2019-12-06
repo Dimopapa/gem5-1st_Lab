@@ -19,3 +19,4 @@ Cache Line Size = 64</pre>
 
 
 ### 1.2
+![image](https://user-images.githubusercontent.com/43822588/70311619-aaae7e00-181a-11ea-9b8f-66b33eb5ec6f.png)
