@@ -53,4 +53,82 @@ Gate induced Ρεύμα, το οποίο ρέει μέσω Gate-Drain λόγω �
 
 Προσομοιώνοντας τους 2 αυτούς επεξεργαστές με τις κατάλληλες εντολές βγάζουμε τα παρακάτω αποτελέσματα.
 
+__Xeon__
+<pre>
+Processor: 
+  Area = 410.507 mm^2
+  Peak Power = 134.938 W
+  Total Leakage = 36.8319 W
+  Peak Dynamic = 98.1063 W
+  Subthreshold Leakage = 35.1632 W
+  Subthreshold Leakage with power gating = 16.3977 W
+  Gate Leakage = 1.66871 W
+  Runtime Dynamic = 72.9199 W
+
+  Total Cores: 2 cores 
+  Device Type= ITRS high performance device type
+    Area = 111.713 mm^2
+    Peak Dynamic = 78.5978 W
+    Subthreshold Leakage = 24.1131 W
+    Subthreshold Leakage with power gating = 10.3006 W
+    Gate Leakage = 1.49026 W
+    Runtime Dynamic = 55.7891 W
+
+  Total L3s: 
+  Device Type= ITRS high performance device type
+    Area = 293.281 mm^2
+    Peak Dynamic = 6.70159 W
+    Subthreshold Leakage = 10.9824 W
+    Subthreshold Leakage with power gating = 6.06659 W
+    Gate Leakage = 0.165767 W
+    Runtime Dynamic = 4.32382 W
+
+  Total NoCs (Network/Bus): 
+  Device Type= ITRS high performance device type
+    Area = 5.51364 mm^2
+    Peak Dynamic = 12.807 W
+    Subthreshold Leakage = 0.0678232 W
+    Subthreshold Leakage with power gating = 0.0305204 W
+    Gate Leakage = 0.0126787 W
+    Runtime Dynamic = 12.807 W
+    </pre>
+    
+
+__ARM Cortex-A9__
+<pre>
+Processor: 
+  Area = 5.39698 mm^2
+  Peak Power = 1.74189 W
+  Total Leakage = 0.108687 W
+  Peak Dynamic = 1.6332 W
+  Subthreshold Leakage = 0.0523094 W
+  Gate Leakage = 0.0563774 W
+  Runtime Dynamic = 2.96053 W
+
+  Total Cores: 2 cores 
+  Device Type= ITRS low operating power device type
+    Area = 4.84735 mm^2
+    Peak Dynamic = 1.57159 W
+    Subthreshold Leakage = 0.0484486 W
+    Gate Leakage = 0.0501375 W
+    Runtime Dynamic = 1.06575 W
+
+  Total First Level Directory: 
+  Device Type= ITRS low operating power device type
+    Area = 0.535391 mm^2
+    Peak Dynamic = 0.045212 W
+    Subthreshold Leakage = 0.00370577 W
+    Gate Leakage = 0.0060234 W
+    Runtime Dynamic = 1.81276 W
+
+  Total NoCs (Network/Bus): 
+  Device Type= ITRS low operating power device type
+    Area = 0.014239 mm^2
+    Peak Dynamic = 0.0164048 W
+    Subthreshold Leakage = 0.000155022 W
+    Gate Leakage = 0.000216526 W
+    Runtime Dynamic = 0.0820239 W
+
+</pre>
+
 
