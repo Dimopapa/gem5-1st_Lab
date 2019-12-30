@@ -208,3 +208,14 @@ _print_energy.py mcpat_output_file gem5_stats_file_ μπορούμε να πάρ
 προηγούμενο εργαστήριο.
 
 
+
+
+resources:
+https://en.wikipedia.org/wiki/CPU_power_dissipation
+https://www.hpl.hp.com/research/mcpat/micro09.pdf
+https://www.sciencedirect.com/topics/computer-science/static-power
+https://en.wikipedia.org/wiki/CPU_cache
+https://cirosantilli.com/linux-kernel-module-cheat/?fbclid=IwAR3h1ny5hRoVUIGP1vtOsUAzqXYd69sHBAopwuveHZtTSbd_MFp0B4Nmp8c#gem5-cpu-types
+http://gem5.org/InOrder
+http://www.m5sim.org/SimpleCPU#BaseSimpleCPU
+http://www.gem5.org/docs/html/minor.html
