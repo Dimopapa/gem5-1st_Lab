@@ -124,3 +124,11 @@ L1_cache_associativity = 2* L2_cache_associativity
 Συνολικά αν προσθέσουμε όλες τις παραπάνω σχέσεις και θεωρώντας ότι το associativity και το cache line size εξαρτώνται άμεσα από το cache size, βγάζουμε μια προσεγγιστική συνάρτηση κόστους που έχει την μορφή :
 
 Cost = 10 * L1_data_cache_size * ( 2 * L1_cache_associativity + cache_line_size) + 10 * L1_instruction_cache_size * ( 2 * L1_cache_associativity + cache_line_size) + L2_data_cache_size * ( L1_cache_associativity + 2 * cache_line_size)
+
+
+Resources:
+https://en.wikipedia.org/wiki/CPU_cache
+https://cirosantilli.com/linux-kernel-module-cheat/?fbclid=IwAR3h1ny5hRoVUIGP1vtOsUAzqXYd69sHBAopwuveHZtTSbd_MFp0B4Nmp8c#gem5-cpu-types
+http://gem5.org/InOrder
+http://www.m5sim.org/SimpleCPU#BaseSimpleCPU
+http://www.gem5.org/docs/html/minor.html
